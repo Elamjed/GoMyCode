@@ -1,0 +1,49 @@
+PROCEDURE dot_product(var v1,v2: ARRAY_OF integer[]) 
+VAR
+    ps:=integer;
+BEGIN
+    ps:=0;
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps+(v1[i]*v2[i]);
+    END_FOR
+    write(ps);
+END
+
+ALGORITHM DOT_P
+VAR
+v1,v2:ARRAY_OF integer[]
+ n :integer;   
+BEGIN
+    read(n);
+    IF ((n mod 2)=0) THEN
+       IF (dot_product(v1,v2))=0 THEN
+           write("is ortogonal")
+       END_IF 
+    END_IF
+END
+FUNCTION dot prod(var v1,v2:ARRAY_OF integer[]) : integer
+VAR
+        ps:=integer;
+
+BEGIN
+    ps:=0;
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps+(v1[i]*v2[i]);
+    END_FOR
+    
+    RETURN ps ;
+END
+ALGORITHM DOT_P
+VAR
+v1,v2:ARRAY_OF integer[]
+x:integer
+ n :integer;   
+BEGIN
+    read(n);
+    x:=dot_product(v1,v2)
+    IF ((n mod 2)=0) THEN
+       IF (x=0) THEN
+           write("is ortogonal")
+       END_IF 
+    END_IF
+END
